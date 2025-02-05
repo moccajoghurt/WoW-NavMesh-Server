@@ -1,0 +1,23 @@
+{
+  "name": "NavMesh.Server Development",
+  "dockerComposeFile": ["../docker-compose.yml", "../docker-compose.local.yml"],
+  "service": "navmesh-server",
+  "workspaceFolder": "/src",
+  "customizations": {
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-python.vscode-pylance",
+        "ms-python.mypy-type-checker",
+        "ms-python.black-formatter",
+        "ms-python.pylint"
+      ]
+    }
+  },
+  "postCreateCommand": "pip install -e .",
+  "shutdownAction": "stopCompose"
+}

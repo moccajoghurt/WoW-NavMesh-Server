@@ -1,0 +1,20 @@
+services:
+  navmesh-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/src
+      - ./src/navmesh_server/adapters/detour/mmaps:/usr/local/bin/mmaps
+    entrypoint:
+      - uvicorn
+      - navmesh_server.fastapi_app:app
+      - --host
+      - 0.0.0.0
+      - --port
+      - "80"
+    ports:
+      - "8080:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
