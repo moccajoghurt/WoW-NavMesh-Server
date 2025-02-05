@@ -6,5 +6,6 @@ This server was originally part of a larger system handling multiple responsibil
 
 - Start with `docker compose up`.
 - Runs on port 8080; change it to your liking in docker-compose.yml.
+- Test the server with OpenAPI via: localhost:8080/docs
 
 Big shoutout to Drew Kestell, who inspired this repository! Thanks to his great blog post and repository, I learned a lot. The Linux shared library specifically compiled for this Python image is based on Drew Kestell’s Windows DLL.
